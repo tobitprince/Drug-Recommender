@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dawa</title>
+  <!-- Favicon -->
+  <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleauth.css') }}">
+
+</head>
+<body style="padding-top: 50px;">
+
+  {% block body %} {% endblock %}
+
+<!-- partial -->
+<script >
+
+  document.querySelector('.img__btn').addEventListener('click', function() {
+    document.querySelector('.cont').classList.toggle('s--signup');
+  });
+    </script>
+  
+  </body>
+  </html>

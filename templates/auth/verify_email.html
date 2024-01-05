@@ -1,0 +1,35 @@
+{% extends 'auth/layout.html' %}
+
+{% block body %}
+{% include "includes/alert.html" %}
+<div class="cont" style="height: 300px!important;" >
+  <form action="/verify-email" method="post">
+    <div class="form sign-in">
+      <h2 style="font-weight: bolder;color:#06a3da;">Verify</h2>
+      <label>
+        
+        <input type="text" placeholder="OTP code" name="token" required />
+      </label>
+     
+      
+      <button type="submit" class="submit">Verify</button>
+      
+    </div>
+  </form>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>Verify Your Account</h2>
+        <p>Fill up your OTP code that you received by email</p>
+      </div>
+      
+     
+    </div>
+   
+  </div>
+</div>
+
+
+{% endblock %}
+
+

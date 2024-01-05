@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <title>{% block title %}My App{% endblock %}</title>
+     <style>
+        body {
+            background-image: url('/Users/Admin/PycharmProjects/pythonProject/venv/static/pic2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* This ensures the container takes the full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        .content-container {
+            text-align: center; /* Center text content */
+        }
+    </style>
+    </head>
+<div class="content-container">
+    <h2>Welcome, </h2>
+    <form action="/predict" method="post">
+        <label for="condition">Enter your condition:</label>
+        <input type="text" name="condition" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+</div>
+
+</html>

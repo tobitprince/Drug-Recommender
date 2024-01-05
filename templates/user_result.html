@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}User Result{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h2>Recommended Drugs for {{ condition }}</h2>
+    <ul>
+        {% for drug in recommended_drugs %}
+            <li>
+                <strong>{{ drug['Drug'] }}</strong><br>
+                Other information about the drug goes here.
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

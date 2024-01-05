@@ -1,0 +1,25 @@
+<!-- templates/recommendations.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drug Recommendations</title>
+</head>
+<body>
+    <h1>Recommended Drugs for {{ condition }}</h1>
+    <ul>
+        {% for drug in recommended_drugs %}
+            <li>
+                <strong>{{ drug['Drug'] }}</strong><br>
+                Number of Reviews: {{ drug['Number of reviews'] }}<br>
+                Effectiveness: {{ drug['Effective'] }}<br>
+                Level of Satisfaction: {{ drug['Satisfaction'] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go back to prediction</a>
+</body>
+</html>

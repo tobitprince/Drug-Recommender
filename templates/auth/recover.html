@@ -1,0 +1,36 @@
+{% extends 'auth/layout.html' %}
+
+{% block body %}
+{% include "includes/alert.html" %}
+<div class="cont" style="height: 300px!important;" >
+  <form action="/recover" method="post">
+    <div class="form sign-in">
+      <h2 style="font-weight: bolder;color:#06a3da;">Recover</h2>
+      <label>
+        
+        <input type="email" placeholder="Enter your email" name="email" required />
+      </label>
+     
+      
+      <button type="submit" class="submit">Recover</button>
+      
+    </div>
+  </form>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>Forgot you Password?</h2>
+        <p>Kindly enter your email address<br>
+            We will help you recover your password ASAP.</p>
+      </div>
+      
+     
+    </div>
+   
+  </div>
+</div>
+
+
+{% endblock %}
+
+

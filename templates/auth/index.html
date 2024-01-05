@@ -1,0 +1,63 @@
+{% extends 'auth/layout.html' %}
+
+{% block body %}
+{% include "includes/alert.html" %}
+<div class="cont" >
+  <form action="/logini" method="post">
+    <div class="form sign-in">
+      <h2 style="font-weight: bolder;color:#06a3da;">Login</h2>
+      <label>
+        
+        <input type="email" placeholder="Enter your email" name="email" required />
+      </label>
+      <label>
+        
+        <input type="password"  placeholder="Enter your password" name="password" required/>
+      </label>
+   
+      
+      <button type="submit" class="submit">Sign In</button>
+      <p class="forgot-pass"><a href="/forgot_password" style="text-decoration: none;font-weight: bolder;">Forgot password?</a></p>
+      
+    </div>
+  </form>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      <div class="img__btn">
+        <span class="m--up">Sign Up</span>
+        <span class="m--in">Sign In</span>
+      </div>
+    </div>
+    <form action="/register" method="post">
+      <div class="form sign-up">
+        <h2 style="font-weight: bolder;color:#06a3da;">Register</h2>
+        <label>
+          
+          <input type="text" placeholder="Enter your Username" name="uname" required/>
+        </label>
+        <label>
+          
+          <input type="email" placeholder="Enter your email" name="email" required/>
+        </label>
+        <label>
+          
+          <input type="password" placeholder="Enter your password" name="password" required/>
+        </label>
+        <button type="submit" class="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
