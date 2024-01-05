@@ -5,7 +5,7 @@
 <div class="cont" style="height: 300px!important;" >
   <form action="/recover" method="post">
     <div class="form sign-in">
-      <h2 style="font-weight: bolder;color:#06a3da;">Recover</h2>
+      <h2 style="font-weight: bolder;color:#06a3da;"><a href="{{ url_for('home') }}"><img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""></a><br>Recover</h2>
       <label>
         
         <input type="email" placeholder="Enter your email" name="email" required />

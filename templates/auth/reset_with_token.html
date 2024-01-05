@@ -5,7 +5,7 @@
 <div class="cont" style="height: 300px!important;" >
   <form action="{{ url_for('rst')}}" method="post">
     <div class="form sign-in">
-      <h2 style="font-weight: bolder;color:#06a3da;">Reset Account</h2>
+      <h2 style="font-weight: bolder;color:#06a3da;"><a href="{{ url_for('home') }}"><img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""></a><br>Reset Account</h2>
 
       <input type="text" name="token" id="token" value="{{token}}" hidden   required autofocus>
       <label>

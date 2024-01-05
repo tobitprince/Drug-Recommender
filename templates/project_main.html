@@ -1,6 +1,53 @@
 {% extends 'layout.html' %}
-<div class="con" style="height: 100px;">
 
-</div>
 {% block body %}
+<style>
+    .con {
+        height: 100px;
+        padding-top: 300px;
+        background-image: url(../../static/img/pexels-kaboompics-com-5795.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .con form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-top: 50px;
+    }
+
+    .con form select {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .con form input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #06a3da;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .con form input[type="submit"]:hover {
+        background-color: #0485ac;
+    }
+</style>
+
+<div class="con">
+    <form action="/predict" method="post">
+        <select name="condition">
+            {% for option in options %}
+                <option value="{{ option }}">{{ option }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 {% endblock %}

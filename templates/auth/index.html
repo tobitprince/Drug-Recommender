@@ -5,7 +5,8 @@
 <div class="cont" >
   <form action="/logini" method="post">
     <div class="form sign-in">
-      <h2 style="font-weight: bolder;color:#06a3da;">Login</h2>
+      
+      <h2 style="font-weight: bolder;color:#06a3da;"><a href="{{ url_for('home') }}"><img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""></a><br>Login</h2>
       <label>
         
         <input type="email" placeholder="Enter your email" name="email" required />
@@ -38,7 +39,7 @@
     </div>
     <form action="/register" method="post">
       <div class="form sign-up">
-        <h2 style="font-weight: bolder;color:#06a3da;">Register</h2>
+        <h2 style="font-weight: bolder;color:#06a3da;"><a href="{{ url_for('home') }}"><img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""></a><br>Register</h2>
         <label>
           
           <input type="text" placeholder="Enter your Username" name="uname" required/>

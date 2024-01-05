@@ -97,10 +97,12 @@ def home2():
 
 @app.route('/project', methods=['GET'])
 def project():
+  options = df['Condition'].tolist()  # convert the 'conditions' column to a list
+  options = list(set(options))  # remove duplicates by converting to a set and back to a list
   username = None
   if 'username' in session:
     username = session['username']
-  return render_template('project_main.html', username=username)
+  return render_template('project_main.html', username=username, options=options)
 
 
 
@@ -586,28 +588,25 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 
-@app.get("/user_home")
-def user_home():
-    current_user= "press"
-    return templates.TemplateResponse("user_home.html", {"request": request, "user": current_user})
 
 
 
 
 
 
-@app.post("/predict")
-def predict(
-        
 
-):
+@app.route("/predict", methods=['GET', 'POST'])
+def predict():
+        condition = request.form['condition']
         print(condition)
         recommended_drugs = predict_recommendations(condition)
         condition_df = df[df['Drug'].isin(recommended_drugs)]
-        return templates.TemplateResponse(
-            "user_result.html",
-            {"request": request, "recommended_drugs": condition_df.to_dict('records')},
-        )
+        condition_df = condition_df.drop_duplicates(subset=['Drug'])
+        recommended_drugs = condition_df[['Drug', 'Information']].to_dict('records')
+        username = None
+        if 'username' in session:
+            username = session['username']
+        return render_template('user_result.html', condition=condition, recommended_drugs=recommended_drugs, username=username)
 
 ##ADMIN 
 ####################################

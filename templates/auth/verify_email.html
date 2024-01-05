@@ -5,7 +5,7 @@
 <div class="cont" style="height: 300px!important;" >
   <form action="/verify-email" method="post">
     <div class="form sign-in">
-      <h2 style="font-weight: bolder;color:#06a3da;">Verify</h2>
+      <h2 style="font-weight: bolder;color:#06a3da;"><a href="{{ url_for('home') }}"><img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""></a><br>Verify</h2>
       <label>
         
         <input type="text" placeholder="OTP code" name="token" required />
