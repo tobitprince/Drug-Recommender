@@ -2,12 +2,50 @@
 
 {% block body %}
 
+<style>
+  .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+  }
+  </style>
+   <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Profile Page</h1>
+            
+        </div>
+    </div>
+</div>
+</div>
+<!-- Navbar End -->
 
-    <div class="cont " style="padding-bottom: 280px;padding-top: 80px; background-image: url(../../static/img/pexels-kaboompics-com-5795.jpg);">
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+<div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+        <div class="modal-header border-0">
+            <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+            <div class="input-group" style="max-width: 600px;">
+                <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Full Screen Search End -->
+   
+<div class="container layout_padding fadeInUp" style="padding-bottom: 280px;"  data-wow-delay="0.1s">
         <div class="main-body">
         
              <br><br>      
-             <legend class="hidden-first" style="color: #ac6718;padding-left: 20px;">Edit Profile</legend>
+             <legend class="hidden-first" style="color: #06a3da;padding-left: 20px;">Edit Profile</legend>
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">
@@ -54,7 +92,7 @@
                       <div class="row">
                         <div class="col-sm-12">
                           
-                           <a class="btn  " style="color: white!important;background-color: #ac6718;" href="./edit_profile/edit/{{ account['id'] }}" class="link-button" >Edit</a> 
+                           <a class="btn  " style="color: white!important;background-color: #06a3da;" href="./edit_profile/edit/{{ account['id'] }}" class="link-button" >Edit</a> 
                          
                         </div>
                       </div>
@@ -70,5 +108,6 @@
               </div>
     
             </div>
+ 
        
 {% endblock %}

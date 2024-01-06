@@ -44,9 +44,9 @@
 
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" >
             <img style="width: 60px;" src="{{ url_for('static', filename='img/add.png') }}" alt="">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="{{ url_for('home2') }}" class="navbar-brand p-0">
                 
                 <h1 class="m-0"></i>Dawa</h1>
             </a>
@@ -61,7 +61,7 @@
 						<li class="nav-item nav-link active"><a href="{{ url_for('home') }}">Home</a></li>
 					{% endif %}
                     <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
-                    <a href="{{ url_for('about') }}" class="nav-item nav-link">Services</a>
+                    <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
                     <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                 </div>
                 <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
@@ -74,7 +74,7 @@
                 
             </div>
         </nav>
-    </div>
+    
 
         {% block body %} {% endblock %}
 
@@ -105,15 +105,15 @@
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <p class="mb-0">123 Street, New York, USA</p>
+                            <p class="mb-0">123 Street, Nairobi, Kenya</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">info@example.com</p>
+                            <p class="mb-0">dawa@gmail.com</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-0">+254 345 67890</p>
                         </div>
                         <div class="d-flex mt-4">
                             <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>

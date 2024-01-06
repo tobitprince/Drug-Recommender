@@ -1,13 +1,13 @@
 
 <!-- Sidebar Holder -->
-<nav id="sidebar" class="" style="background-color: #051922!important;color: white!important;">
+<nav id="sidebar" class="" style="background-color: #ffff!important;">
 	<div class="sidebar-header">
 		<h3>
 			Admin<br>
 			<i id="sidebarCollapse" class="glyphicon glyphicon-circle-arrow-left"></i>
 		</h3>
 		<strong>
-			<img style="width: 40px;" src="{{ url_for('static', filename='images/logo-small.png') }}" alt=""><br>
+			<img style="width: 40px;" src="{{ url_for('static', filename='img/add.png') }}" alt=""><br>
 			<i id="sidebarExtend" class="glyphicon glyphicon-circle-arrow-right"></i>
 		</strong>
 		
@@ -38,7 +38,7 @@
 </li>
 
 <li>
-	<a href="/userarticle">
+	<a href="/userpredictions">
 		<i class="glyphicon glyphicon-user"></i>
 		User Articles
 		<span class="pull-right">{{tables_and_counts.1.1}}</span>
@@ -49,6 +49,6 @@
 		<li style="color: rgb(156, 82, 82);"><a href="/adminlogout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
 	</ul>
 	<div class ="visit">
-	<a href="./"><img src="{{ url_for('static', filename='images/logo-no-background.png') }}" class="image" alt="" style="height: 80px;" /></a>
+	<a href="./"><img src="{{ url_for('static', filename='img/add.png') }}" class="image" alt="" style="height: 80px;" /></a>
 	</div>
 </nav><!-- / end sidebar -->

@@ -15,6 +15,9 @@ a, a:hover, a:focus {
 	max-width: 250px;
 	transition: all 0.3s;
 }
+#sidebar a{
+	color: black;
+}
 
 #sidebar.active {
 	min-width: 80px;
@@ -58,7 +61,8 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
 	padding: 10px 20px;
-	background: #051922
+	background: #ffffff;
+	color: black;
 }
 
 #sidebar .sidebar-header strong {
@@ -72,7 +76,7 @@ a, a:hover, a:focus {
 	display: block;
 }
 #sidebar ul li a:hover {
-	color: #b44e09;
+	color: #06a3da;
 	;
 }
 #sidebar ul li a i {
@@ -297,4 +301,17 @@ a, a:hover, a:focus {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+}
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
 }

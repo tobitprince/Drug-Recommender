@@ -127,19 +127,14 @@ def about():
     username = session['username']
   return render_template('about.html', username=username)
 
-@app.route('/news', methods=['GET'])
-def news():
+@app.route('/services', methods=['GET'])
+def services():
   username = None
   if 'username' in session:
     username = session['username']
-  return render_template('news.html', username=username)
+  return render_template('service.html', username=username)
 
-@app.route('/single-news', methods=['GET'])
-def singlenews():
-  username = None
-  if 'username' in session:
-    username = session['username']
-  return render_template('single-news.html', username=username)
+
 
 #################login and register#############################
 @ app.route('/login')
@@ -242,7 +237,7 @@ def register():
                 Hi,
                 Dear user, Your verification OTP code is {token}
                 With regards,
-                PandAid""".format(token=token_str)
+                Dawa""".format(token=token_str)
                 html = """\
                 <html>
                 <body>
@@ -253,7 +248,7 @@ def register():
                     </p>
                     <br><br>
                     <p>With regards,</p>
-                    <b>PandAid</b>
+                    <b>Dawa</b>
                 </body>
                 </html>
                 """.format(token=token_str)
@@ -414,7 +409,7 @@ def recover():
                 Hi,
                 Your link is {}
                 With regards,
-                PandAid""".format(link)
+                Dawa""".format(link)
                 html = """\
                 <html>
                 <body>
@@ -425,7 +420,7 @@ def recover():
                     </p>
                     <br><br>
                     <p>With regards,</p>
-                    <b>PandAid</b>
+                    <b>Dawa</b>
                 </body>
                 </html>
                 """.format(link)
@@ -494,10 +489,9 @@ def rst():
 ###################
 @app.route('/questions', methods=['GET', 'POST'])
 def questions():
-     if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'subject' in request.form and 'message' in request.form and 'phone' in request.form:
+     if request.method == 'POST' and 'name' in request.form and 'email' in request.form and 'subject' in request.form and 'message' in request.form :
             name = request.form['name']
             email_address = request.form['email']
-            phone = request.form['phone']
             subject = request.form['subject']
             message = request.form['message']
 
@@ -517,7 +511,7 @@ def questions():
                 Hi {name},
                 Thank you for contacting us and we will attend to you right away
                 With regards,
-                PandAid""".format(name = name)
+                Dawa""".format(name = name)
                 html = """\
                 <html>
                 <body>
@@ -527,7 +521,7 @@ def questions():
                     </p>
                     <br><br>
                     <p>With regards,</p>
-                    <b>PandAid</b>
+                    <b>Dawa</b>
                 </body>
                 </html>
                 """.format(name = name)
@@ -606,6 +600,11 @@ def predict():
         username = None
         if 'username' in session:
             username = session['username']
+        cur = mysql.connection.cursor()
+        for drug in recommended_drugs:
+            cur.execute("INSERT INTO userpredictions(username, `condition`, drug, information) VALUES(%s, %s, %s, %s)", (username, condition, drug['Drug'], drug['Information']))
+        mysql.connection.commit()
+        cur.close()
         return render_template('user_result.html', condition=condition, recommended_drugs=recommended_drugs, username=username)
 
 ##ADMIN 
@@ -673,11 +672,11 @@ def edit_admintable(modifier_id, act):
 		else:
 			return 'Error loading #%s' % modifier_id
 
-@app.route("/userarticle")
+@app.route("/userpredictions")
 @login_required
-def userarticle():
-	data = fetch_all(mysql, "userarticle")
-	return render_template('admin/userarticle.html', data=data, table_count=len(data))
+def userpredictions():
+	data = fetch_all(mysql, "userpredictions")
+	return render_template('admin/userpredictions.html', data=data, table_count=len(data))
 
 
 @app.route('/save', methods=['GET', 'POST'])
@@ -844,8 +843,8 @@ def report():
     # Connect to the database
     cur = mysql.connection.cursor()
 
-    # Execute a SELECT query to get the data from userarticle table
-    cur.execute("SELECT * FROM userarticle")
+    # Execute a SELECT query to get the data from userpredictions table
+    cur.execute("SELECT * FROM userpredictions")
     images_data = cur.fetchall()
 
     # Get the column names from the cursor description
@@ -862,7 +861,7 @@ def report():
 
     # Add the heading and logo to the PDF
     styles = getSampleStyleSheet()
-    title = Paragraph("PandAid", styles['Title'])
+    title = Paragraph("Dawa", styles['Title'])
     logo_path = os.path.join('static', 'images', 'logo-no-background.png')
     logo = ReportLabImage(logo_path, width=100, height=50)  # Adjust the path and dimensions as needed
 

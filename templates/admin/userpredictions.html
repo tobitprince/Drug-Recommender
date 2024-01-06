@@ -9,8 +9,10 @@
         <tr>
             <th>Id</th>
             <th>Username</th>
-            <th>Article</th>
-            <th>Prediction</th>
+            <th>Condition</th>
+            <th>Drug</th>
+            <th>Information</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -18,11 +20,12 @@
         <tr>
             <td>{{ row_data['id'] }}</td>
             <td class="text-capitalize">{{ row_data['username'] }}</td>
-            <td>{{ row_data['article'] }}</td>
-            <td>{{ row_data['result'] }}</td>
+            <td>{{ row_data['condition'] }}</td>
+            <td>{{ row_data['drug'] }}</td>
+            <td>{{ row_data['information'] }}</td>
             <td>
                 <a 
-                    href="./save?cat=userarticle&act=delete&modifier=id&id={{ row_data['id'] }}"
+                    href="./save?cat=userpredictions&act=delete&modifier=id&id={{ row_data['id'] }}"
                     onclick="return navConfirm(this.href);">
                 <i class="glyphicon glyphicon-trash"></i>
                 </a>
