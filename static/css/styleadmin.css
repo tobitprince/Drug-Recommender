@@ -12,7 +12,7 @@ a, a:hover, a:focus {
 
 #sidebar {
 	min-width: 250px;
-	max-width: 250px;
+	max-width: 450px;
 	transition: all 0.3s;
 }
 #sidebar a{
@@ -61,7 +61,8 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
 	padding: 10px 20px;
-	background: #ffffff;
+	background: 
+	#1f253dde	;
 	color: black;
 }
 
@@ -315,3 +316,4 @@ a, a:hover, a:focus {
     visibility: visible;
     opacity: 1;
 }
+
