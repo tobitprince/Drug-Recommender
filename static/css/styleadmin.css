@@ -61,8 +61,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
 	padding: 10px 20px;
-	background: 
-	#1f253dde	;
+	background:	#1f253dde;
 	color: black;
 }
 
@@ -225,7 +224,8 @@ a, a:hover, a:focus {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid 
+  #48c8ef;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -239,7 +239,8 @@ a, a:hover, a:focus {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid 
+  #48c8ef;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
